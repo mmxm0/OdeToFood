@@ -1,0 +1,22 @@
+﻿@model OdeToFood.ViewModels.HomeIndexViewModel
+<html xmlns="http://www.w3.org/1999/xhtml", lang="pt-br">
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>@Model.CurrentMessage</h1>
+    <table>
+        @foreach (var restaurante in Model.ListaRestaurantes) {
+            <tr>
+                <td>@restaurante.Id</td>
+                <td>@restaurante.Nome</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@restaurante.Id">More</a>
+                </td>
+            </tr> 
+        }
+        
+    </table>
+    <a asp-action="Create" asp-controller="Home">Adicionar Restaurante</a>
+</body>
+</html>

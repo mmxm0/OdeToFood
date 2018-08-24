@@ -1,0 +1,18 @@
+﻿@using OdeToFood.Models
+@model Restaurante
+
+<h1>Cadastro</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" />
+        <span asp-validation-for="Nome"></span>
+    </div>
+    <div>
+        <label asp-for="Culinaria"></label>
+        <select asp-for="Culinaria" asp-items="@Html.GetEnumSelectList<CousineType>()"></select>
+        <span asp-validation-for="Culinaria"></span>
+    </div>
+    <input type="submit" name="save" value="Salvar" />
+</form>
